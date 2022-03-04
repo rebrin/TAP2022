@@ -37,12 +37,16 @@ public class LogginGridbag {
         constraints.gridwidth=2;
 //        constraints.weightx=0.1;
 //        constraints.weighty=0.1;
+        Insets espaciado=new Insets(0,0,50,0);
+        constraints.insets=espaciado;
         constraints.fill=GridBagConstraints.NONE;
         Ventana.add(img,constraints);
         /**------usuario------------*/
         constraints=new GridBagConstraints();//limpiar
         constraints.gridx=0;
         constraints.gridy=1;
+        constraints.ipady=20;
+        constraints.ipadx=20;
         Ventana.add(usuario,constraints);
         /**------TF usuario------------*/
         constraints=new GridBagConstraints();//limpiar
@@ -64,6 +68,7 @@ public class LogginGridbag {
         constraints.gridx=1;
         constraints.gridy=3;
         constraints.anchor=GridBagConstraints.LINE_END;
+
         Ventana.add(boton,constraints);
 
         /**-----inicialización -----*/
