@@ -60,12 +60,22 @@ public class ChiquiWord {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    s=new Scanner(new File(ruta+"\\"+nomArch));
-                    String cad="";
-                    while(s.hasNext()){
-                         cad+=s.nextLine()+"\n";
+                    JFileChooser file=new JFileChooser();
+                    file.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+                    int result = file.showOpenDialog(Ventana);
+                    if (result != JFileChooser.CANCEL_OPTION) {
+
+                        File fileName = file.getSelectedFile();
+                        s=new Scanner(fileName);
+                        String cad="";
+                        while(s.hasNext()){
+                            cad+=s.nextLine()+"\n";
+                        }
+                        AreaTexto.setText(cad);
                     }
-                    AreaTexto.setText(cad);
+
+
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
